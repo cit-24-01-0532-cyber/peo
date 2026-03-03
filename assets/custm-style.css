@@ -49,3 +49,41 @@ body, html {
     position: absolute; top: 15px; right: 20px; font-size: 30px;
     cursor: pointer; color: #333;
 }
+function openPopup(title) {
+    const modal = document.getElementById('quick-popup');
+    const body = document.getElementById('modal-body');
+    
+    // Pop-up එක පෙන්වීම සහ Animation එක පණගැන්වීම
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+
+    //
+    // මෙතන තියෙන්නේ ඔයා ලබාදුන්නු වෙස්මුහුණේ පින්තූරය සහිත ඩිසයින් එක
+    body.innerHTML = `
+        <div class="popup-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <h2 style="color: #333; margin-bottom: 15px;">${title} Details</h2>
+            <hr style="width: 80px; border: 2px solid #8b4513; margin-bottom: 25px;">
+
+            <div class="product-image-zoom-container" style="width: 100%; max-width: 350px; height: 350px; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9;">
+                <img src="96470e3d-aed1-4824-bde0-3b0cf2d70c55" alt="Traditional Naga Raksha Mask" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; transform: scale(1.1);">
+            </div>
+
+            <div class="action-container" style="width: 100%;">
+                <p style="color: #555; margin-bottom: 20px;">Explore our collection of authentic, handcrafted traditional Sri Lankan masks.</p>
+                <button style="background: #8b4513; color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+function closePopup() {
+    const modal = document.getElementById('quick-popup');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 400);
+}
