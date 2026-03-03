@@ -1,0 +1,51 @@
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.split-wrapper {
+    display: flex; height: 100vh; width: 100%;
+}
+
+.split-side {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    transition: flex 0.7s ease-in-out; cursor: pointer; position: relative;
+    background-size: cover; background-position: center; color: white;
+}
+
+.split-side:hover { flex: 1.5; }
+
+/* Placeholder Colors - පසුව images දාන්න පුළුවන් */
+.masks-side { background-color: #4a2c2a; }
+.carvings-side { background-color: #63422b; border-left: 2px solid rgba(255,255,255,0.1); }
+
+.overlay-content { text-align: center; pointer-events: none; }
+.overlay-content h2 { font-size: 3rem; margin: 0; }
+.explore-btn {
+    display: inline-block; margin-top: 15px; padding: 10px 20px;
+    border: 2px solid white; border-radius: 25px; font-weight: bold;
+}
+
+/* Pop-up Overlay */
+.popup-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); display: none; z-index: 1000;
+    justify-content: center; align-items: center;
+}
+
+.modal-box {
+    background: white; width: 80%; max-width: 600px; padding: 40px;
+    border-radius: 15px; position: relative; text-align: center;
+    /* Pop-up Animation */
+    transform: scale(0.5); opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.popup-overlay.active { display: flex; }
+.popup-overlay.active .modal-box { transform: scale(1); opacity: 1; }
+
+.close-btn {
+    position: absolute; top: 15px; right: 20px; font-size: 30px;
+    cursor: pointer; color: #333;
+}

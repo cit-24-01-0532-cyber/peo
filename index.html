@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureCeylon - Wood Crafts</title>
+    <link rel="stylesheet" href="assets/custm-style.css">
+</head>
+<body>
+
+    <div class="split-wrapper">
+        <div class="split-side masks-side" onclick="openPopup('Wood Masks')">
+            <div class="overlay-content">
+                <h2>Wood Masks</h2>
+                <p>Traditional Sri Lankan Art</p>
+                <span class="explore-btn">Explore Items</span>
+            </div>
+        </div>
+
+        <div class="split-side carvings-side" onclick="openPopup('Wood Carvings')">
+            <div class="overlay-content">
+                <h2>Wood Carvings</h2>
+                <p>Handcrafted Masterpieces</p>
+                <span class="explore-btn">Explore Items</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="quick-popup" class="popup-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="assets/custom-script.js"></script>
+</body>
+</html>
